@@ -1,152 +1,153 @@
-Bike Share Demand Predictor
+**Bike Share Demand Predictor**
+===============================
 
 A simple pipeline to train and serve a bike-share demand model with a Streamlit dashboard.
 
-⸻
-
-Description
+**Description**
+---------------
 
 This repository provides a full, end-to-end workflow for predicting bike-share demand:
-	1.	Data Loading & Feature Engineering
-	2.	Model Training (regression) & Saving
-	3.	Single‐Row Prediction Logic
-	4.	Interactive Streamlit Dashboard
-	5.	Unit Tests for Data Processing & Prediction
 
-⸻
+1.  **Data Loading & Feature Engineering**
+    
+2.  **Model Training (regression) & Saving**
+    
+3.  **Single‐Row Prediction Logic**
+    
+4.  **Interactive Streamlit Dashboard**
+    
+5.  **Unit Tests for Data Processing & Prediction**
+    
 
-Project Structure
+**Project Structure**
+---------------------
 
-bike_share_project/
-├─ data/                      # Sample CSV files (e.g., bixi_sample.csv)
-├─ models/                    # Saved model artifacts (e.g., bike_demand_model.pkl)
-├─ requirements.txt           # Python dependencies
-├─ src/
-│  ├─ data_processing.py      # load_data() and feature_engineering()
-│  ├─ train.py                # Train & save a regression model
-│  ├─ predict.py              # Load model & make single‐row predictions
-│  └─ app.py                  # Streamlit app for interactive forecasts
-├─ tests/
-│  ├─ test_data_processing.py # Unit tests for data processing
-│  └─ test_predict.py         # Unit tests for prediction logic
-└─ README.md                  # This file
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bike_share_project/  ├─ data/                      # Sample CSV files (e.g., bixi_sample.csv)  ├─ models/                    # Saved model artifacts (e.g., bike_demand_model.pkl)  ├─ requirements.txt           # Python dependencies  ├─ src/  │  ├─ data_processing.py      # load_data() and feature_engineering()  │  ├─ train.py                # Train & save a regression model  │  ├─ predict.py              # Load model & make single‐row predictions  │  └─ app.py                  # Streamlit app for interactive forecasts  ├─ tests/  │  ├─ test_data_processing.py # Unit tests for data processing  │  └─ test_predict.py         # Unit tests for prediction logic  └─ README.md                  # This file   `
 
+**Features**
+------------
 
-⸻
+### **Data Loading & Feature Engineering**
 
-Features
+*   load\_data() reads a CSV into a pandas DataFrame.
+    
+*   feature\_engineering() creates time‐based features (hour, day, month, etc.) plus any station or weather metadata.
+    
 
-Data Loading & Feature Engineering
-	•	load_data() reads a CSV into a pandas DataFrame.
-	•	feature_engineering() creates time‐based features (hour, day, month, etc.) plus any station or weather metadata.
+### **Model Training**
 
-Model Training
-	•	train.py trains a scikit‐learn regression model (e.g., RandomForestRegressor or LinearRegression).
-	•	Saves the trained model as models/bike_demand_model.pkl.
+*   train.py trains a scikit‐learn regression model (e.g., RandomForestRegressor or LinearRegression).
+    
+*   Saves the trained model as models/bike\_demand\_model.pkl.
+    
 
-Single-Row Prediction
-	•	predict.py loads the saved model and returns demand for a single record supplied as a dictionary or one‐row DataFrame.
+### **Single-Row Prediction**
 
-Interactive Streamlit Dashboard
-	•	app.py provides a UI to input date/time, weather, and station parameters to see real‐time demand estimates.
-	•	Accessible at http://localhost:8501 once launched.
+*   predict.py loads the saved model and returns demand for a single record supplied as a dictionary or one‐row DataFrame.
+    
 
-Automated Testing
-	•	tests/test_data_processing.py validates data loading and engineered features.
-	•	tests/test_predict.py checks that the prediction pipeline returns expected results.
+### **Interactive Streamlit Dashboard**
 
-⸻
+*   app.py provides a UI to input date/time, weather, and station parameters to see real‐time demand estimates.
+    
+*   Accessible at **http://localhost:8501** once launched.
+    
 
-Requirements
-	•	Python 3.8+
-	•	Core Python packages listed in requirements.txt (pandas, numpy, scikit‐learn, joblib, streamlit)
+### **Automated Testing**
 
-⸻
+*   tests/test\_data\_processing.py validates data loading and engineered features.
+    
+*   tests/test\_predict.py checks that the prediction pipeline returns expected results.
+    
 
-Installation
-	1.	Clone the repository
+**Requirements**
+----------------
 
-git clone https://github.com/your-username/bike_share_project.git
-cd bike_share_project
+*   **Python 3.8+**
+    
+*   Core Python packages listed in requirements.txt (pandas, numpy, scikit‐learn, joblib, streamlit)
+    
 
+**Installation**
+----------------
 
-	2.	(Optional) Create & activate a virtual environment
+1.  **Clone the repository**
+    
 
-python3 -m venv venv
-source venv/bin/activate      # macOS / Linux
-# .\venv\Scripts\activate     # Windows
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/your-username/bike_share_project.git  cd bike_share_project   `
 
+2.  **(Optional) Create & activate a virtual environment**
+    
 
-	3.	Install dependencies
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python3 -m venv venv  source venv/bin/activate      # macOS / Linux  # .\venv\Scripts\activate     # Windows   `
 
-pip install --upgrade pip
-pip install -r requirements.txt
+2.  **Install dependencies**
+    
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install --upgrade pip  pip install -r requirements.txt   `
 
+**Usage**
+---------
 
-⸻
+### **1 · Train the Model**
 
-Usage
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl   `
 
-1 · Train the Model
+*   *   data/bixi\_sample.csv – path to the CSV training data
+        
+    *   models/bike\_demand\_model.pkl – output path for the trained model artifact
+        
 
-python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl
+### **2 · Run Unit Tests**
 
-	•	Arguments
-	•	data/bixi_sample.csv – path to the CSV training data
-	•	models/bike_demand_model.pkl – output path for the trained model artifact
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pytest   `
 
-⸻
+### **3 · Launch the Dashboard**
 
-2 · Run Unit Tests
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run src/app.py   `
 
-pytest
+*   Opens **http://localhost:8501** where you can interactively explore demand predictions.
+    
 
+**Example**
+-----------
 
-⸻
+1.  **Train**
+    
 
-3 · Launch the Dashboard
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl   `
 
-streamlit run src/app.py
+2.  **Start Dashboard**
+    
 
-	•	Opens http://localhost:8501 where you can interactively explore demand predictions.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run src/app.py   `
 
-⸻
+2.  *   Select a Date/Time (e.g., 2025-06-01 08:00)
+        
+    *   Enter Temperature (°C), Humidity (%), Wind Speed (km/h), and Station ID
+        
+    *   Click **Predict** to view the forecasted bike demand
+        
 
-Example
-	1.	Train
+**Contributing**
+----------------
 
-python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl
+1.  **Fork** the repository and create your feature branch:
+    
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git checkout -b feature/my-new-feature   `
 
-	2.	Start Dashboard
+2.  **Make changes** and add tests if applicable.
+    
+3.  **Commit** with a clear message:
+    
 
-streamlit run src/app.py
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git commit -m "Add my new feature"   `
 
+2.  **Push** your branch and open a Pull Request.
+    
 
-	3.	In Browser
-	•	Select a Date/Time (e.g., 2025-06-01 08:00)
-	•	Enter Temperature (°C), Humidity (%), Wind Speed (km/h), and Station ID
-	•	Click Predict to view the forecasted bike demand
+**License**
+-----------
 
-⸻
-
-Contributing
-	1.	Fork the repository and create your feature branch:
-
-git checkout -b feature/my-new-feature
-
-
-	2.	Make changes and add tests if applicable.
-	3.	Commit with a clear message:
-
-git commit -m "Add my new feature"
-
-
-	4.	Push your branch and open a Pull Request.
-
-⸻
-
-License
-
-Distributed under the MIT License. See the LICENSE file for details.
+Distributed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
