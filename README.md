@@ -21,8 +21,21 @@ This repository provides a full, end-to-end workflow for predicting bike-share d
 
 **Project Structure**
 ---------------------
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bike_share_project/  ├─ data/                      # Sample CSV files (e.g., bixi_sample.csv)  ├─ models/                    # Saved model artifacts (e.g., bike_demand_model.pkl)  ├─ requirements.txt           # Python dependencies  ├─ src/  │  ├─ data_processing.py      # load_data() and feature_engineering()  │  ├─ train.py                # Train & save a regression model  │  ├─ predict.py              # Load model & make single‐row predictions  │  └─ app.py                  # Streamlit app for interactive forecasts  ├─ tests/  │  ├─ test_data_processing.py # Unit tests for data processing  │  └─ test_predict.py         # Unit tests for prediction logic  └─ README.md                  # This file   `
+```bash
+bike_share_project/
+├─ data/                      # Sample CSV files (e.g., bixi_sample.csv)
+├─ models/                    # Saved model artifacts (e.g., bike_demand_model.pkl)
+├─ requirements.txt           # Python dependencies
+├─ src/
+│  ├─ data_processing.py      # load_data() and feature_engineering()
+│  ├─ train.py                # Train & save a regression model
+│  ├─ predict.py              # Load model & make single-row predictions
+│  └─ app.py                  # Streamlit app for interactive forecasts
+├─ tests/
+│  ├─ test_data_processing.py # Unit tests for data processing
+│  └─ test_predict.py         # Unit tests for prediction logic
+└─ README.md                  # This file
+```
 
 **Features**
 ------------
@@ -73,25 +86,30 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 1.  **Clone the repository**
     
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/your-username/bike_share_project.git  cd bike_share_project   `
+```bash 
+git clone https://github.com/your-username/bike_share_project.git  cd bike_share_project
+```
 
 2.  **(Optional) Create & activate a virtual environment**
     
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python3 -m venv venv  source venv/bin/activate      # macOS / Linux  # .\venv\Scripts\activate     # Windows   `
+```bash
+python3 -m venv venv  source venv/bin/activate      # macOS / Linux  # .\venv\Scripts\activate     # Windows   `
+```
 
 2.  **Install dependencies**
-    
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install --upgrade pip  pip install -r requirements.txt   `
+```bash
+pip install --upgrade pip  pip install -r requirements.txt   `
+```
 
 **Usage**
 ---------
 
 ### **1 · Train the Model**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl   `
+```bash
+python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl   `
+``` 
 
 *   *   data/bixi\_sample.csv – path to the CSV training data
         
@@ -100,11 +118,15 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 ### **2 · Run Unit Tests**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pytest   `
+```bash
+pytest   `
+```
 
 ### **3 · Launch the Dashboard**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run src/app.py   `
+```bash
+streamlit run src/app.py   `
+```
 
 *   Opens **http://localhost:8501** where you can interactively explore demand predictions.
     
@@ -115,12 +137,15 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 1.  **Train**
     
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl   `
+```bash
+python3 src/train.py data/bixi_sample.csv models/bike_demand_model.pkl   `
+```
 
 2.  **Start Dashboard**
     
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run src/app.py   `
+```bash
+streamlit run src/app.py   `
+```
 
 2.  *   Select a Date/Time (e.g., 2025-06-01 08:00)
         
@@ -134,15 +159,17 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 1.  **Fork** the repository and create your feature branch:
     
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git checkout -b feature/my-new-feature   `
+```bash
+git checkout -b feature/my-new-feature   `
+```
 
 2.  **Make changes** and add tests if applicable.
     
 3.  **Commit** with a clear message:
     
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git commit -m "Add my new feature"   `
+```bash
+git commit -m "Add my new feature"   `
+```
 
 2.  **Push** your branch and open a Pull Request.
     
